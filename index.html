@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/main.css">
+  <title>Time</title>
+</head>
+
+<body>
+  <div class="error">
+    <p>On your device can't be view this site !!!!</p>
+  </div>
+  <div class="container">
+    <div class="data_time">
+      <div class="data_time__data">29.05.2023</div>
+      <div class="clock">
+        <div class="clock_hours"></div>
+        <div class="clock_minutes"></div>
+        <div class="clock_seconds"></div>
+      </div>
+
+      <div class="data_time__time">00:00:00</div>
+    </div>
+    <div class="sec_meter">
+      <div class="sec_meter_goon">
+        <div class="sec_meter_goon__numbers">00:00:00:000</div>
+        <div class="sec_meter_goon__btn">
+          <input type="button" class="btn start" value="START">
+          <input type="button" class="btn loop" value="LOOP">
+          <input type="button" class="btn stop" value="STOP">
+          <input type="button" class="btn reset" value="RESET">
+        </div>
+      </div>
+      <div class="sec_meter__loop"></div>
+    </div>
+    <div class="count_down">
+      <div class="count_down_set">
+        <div class="count_down_set__number">25</div>
+        <span>MINUTES</span>
+        <div>
+          <input type="button" class="btn plus" value="+">
+          <input type="button" class="btn minus" value="-">
+        </div>
+      </div>
+      <div class="count_down_count">
+        <div class="count_down_count__number">00:00</div>
+        <div class="count_down_count__btn">
+          <input type="button" class="btn dstart" value="START">
+          <input type="button" class="btn dstop" value="STOP">
+          <input type="button" class="btn dreset" value="RESET">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/timing.js"></script>
+</body>
+
+</html>

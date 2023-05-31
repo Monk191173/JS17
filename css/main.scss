@@ -1,0 +1,230 @@
+@import 'base/main';
+$enable-negative-margins: true;
+
+body {
+  padding: 20px;
+  background-color: #1d1c1c;
+}
+
+$Shadow: 0px -3px 8px 4px rgba(128, 128, 128, 0.404), -3px 0px 8px 4px rgba(128, 128, 128, 0.404);
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+  background-color: #1d1c1c;
+}
+
+
+
+@mixin Black ($si) {
+  font-family: 'Black';
+  font-size: $si;
+  color: rgb(6, 113, 147);
+}
+
+.error {
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: #1d1c1c;
+  @include Black(20px);
+  color: red;
+
+}
+
+
+.data_time,
+.sec_meter,
+.count_down {
+  width: 96%;
+  height: 25vh;
+  box-shadow: $Shadow;
+  border-radius: 3px;
+  margin: 30px auto;
+}
+
+.data_time {
+  display: flex;
+  flex-direction: column;
+  line-height: 10vh;
+  justify-content: space-between;
+  align-items: center;
+
+
+  &__time,
+  &__data {
+    display: flex;
+    @include Black(16px);
+  }
+
+  &__time {
+    display: none;
+    cursor: pointer;
+    width: 350px;
+    @include Black(80px);
+  }
+}
+
+.clock {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  position: relative;
+  cursor: pointer;
+  resize: none;
+  background: center / contain no-repeat url(../img/clock_face.png);
+
+  &_hours,
+  &_minutes,
+  &_seconds {
+    position: absolute;
+    left: 50%;
+    top: 17%;
+    width: 1px;
+    height: 25px;
+    transform-origin: 0 bottom;
+    display: inline-block;
+    background-color: red;
+    z-index: 2;
+  }
+
+  &_minutes {
+    top: 5%;
+    height: 35px;
+    background-color: blue;
+    z-index: 1;
+  }
+
+  &_seconds {
+    top: 0;
+    height: 40px;
+    background-color: green;
+    z-index: 3;
+  }
+}
+
+.clock.tool::after {
+  content: 'Click me ))';
+  position: absolute;
+  display: block;
+  height: 30px;
+  width: 80px;
+  line-height: 30px;
+  text-align: center;
+  top: -10px;
+  left: 70px;
+  font-weight: bolder;
+  background-color: rgba(255, 228, 196, 0.541);
+  color: red;
+  border-radius: 3px;
+}
+
+
+.btn {
+  width: 70px;
+  @include Black(15px);
+  background-color: transparent;
+  border: 1px solid gray;
+  box-shadow: $Shadow;
+
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn_dis {
+  box-shadow: none;
+  cursor: default;
+}
+
+.sec_meter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sec_meter_goon {
+  display: flex;
+  width: 65%;
+  flex-direction: column;
+  align-items: center;
+
+  &__numbers {
+    width: 380px;
+    @include Black(50px);
+    margin-bottom: 90px;
+  }
+}
+
+.sec_meter__loop {
+  width: 25%;
+  height: 80%;
+  box-shadow: $Shadow;
+  border-radius: 3px;
+  padding: 10px;
+  @include Black(20px);
+  text-align: center;
+  overflow-y: auto;
+}
+
+.count_down {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  &_set {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__number {
+      width: 80px;
+      @include Black(50px);
+      text-align: center;
+    }
+
+    & span {
+      @include Black(15px);
+      margin-bottom: 20px;
+    }
+
+    & input {
+      width: 30px;
+    }
+  }
+}
+
+.count_down_count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__number {
+    width: 170px;
+    @include Black(50px);
+    margin-bottom: 33px;
+  }
+}
+
+@media screen and (max-width:565px) and (min-width:0px) {
+  .error {
+    display: block;
+  }
+
+  .container {
+    content: url('');
+    width: 0;
+  }
+}
+
+@media screen and (max-height:650px) and (min-height:0px) {
+  .error {
+    display: block;
+  }
+
+  .container {
+    content: url('');
+    width: 0;
+  }
+}
